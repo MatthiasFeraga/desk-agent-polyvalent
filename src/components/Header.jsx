@@ -1,4 +1,5 @@
 import React from "react";
+import { Container, Header as TextHeader } from "semantic-ui-react";
 
 export default class Header extends React.Component {
   state = {};
@@ -8,6 +9,12 @@ export default class Header extends React.Component {
   componentWillUnmount() {}
 
   render() {
-    return <div>DITP - Desk</div>;
+    return (
+      <Container text>
+        <TextHeader as="h1" style={{ margin: "0.5em 0 1em 0" }}>
+          <i className="fas fa-desktop" /> Desk
+        </TextHeader>
+      </Container>
+    );
   }
 }

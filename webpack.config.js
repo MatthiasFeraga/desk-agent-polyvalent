@@ -44,16 +44,6 @@ module.exports = env => {
           ]
         },
 
-        // SVG loader
-        {
-          test: /\.svg$/,
-          loader: "svg-sprite-loader",
-          options: {
-            extract: true,
-            spriteFilename: "assets/images/sprite.svg"
-          }
-        },
-
         {
           test: /\.css$/,
           use: ["style-loader", "css-loader"]
@@ -134,10 +124,9 @@ module.exports = env => {
       modules: ["./src", "./node_modules"],
       alias: {
         Components: path.join(__dirname, "src", "components"),
-        Reducers: path.join(__dirname, "src", "reducers"),
         Routers: path.join(__dirname, "src", "routers"),
         Actions: path.join(__dirname, "src", "actions"),
-        Config: path.join(__dirname, "src", "config")
+        Data: path.join(__dirname, "src", "data")
       }
     },
 

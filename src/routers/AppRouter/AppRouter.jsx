@@ -1,8 +1,8 @@
 import React from "react";
 // react-dom (what we'll use here)
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import { Home, Header } from "Components";
+import { Splash, Header, Footer, Home } from "Components";
 
 class AppRouter extends React.Component {
   constructor(props) {
@@ -14,8 +14,12 @@ class AppRouter extends React.Component {
       <div>
         <Header />
         <BrowserRouter>
-          <Route path="/" component={Home} />
+          <Switch>
+            <Route exact path="/" component={Splash} />
+            <Route exact path="/home" component={Home} />
+          </Switch>
         </BrowserRouter>
+        <Footer />
       </div>
     );
   }
