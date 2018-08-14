@@ -47,7 +47,7 @@ export default class LinksContainer extends React.Component {
                                 size="small"
                                 centered
                                 inline
-                                verticalAlign
+                                verticalAlign="middle"
                               />
                               <Card.Content>
                                 <Card.Description>
