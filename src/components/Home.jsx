@@ -7,7 +7,8 @@ import {
   Input,
   Icon,
   List,
-  Label
+  Label,
+  Image
 } from "semantic-ui-react";
 import { Loader } from "semantic-ui-react";
 
@@ -41,10 +42,11 @@ export default class Home extends React.Component {
     }
     this.setState({ searchingLoading: true });
 
-    let googleSearchURL = `https://www.googleapis.com/customsearch/v1/siterestrict?key=AIzaSyDOhofRtJJoZSZ3Jw77Nc6_xA5rvi7fEzg&cx=016550067971777540424:on93fby9gya&q=${
+    let googleSearchURL = `https://www.googleapis.com/customsearch/v1?key=AIzaSyDOhofRtJJoZSZ3Jw77Nc6_xA5rvi7fEzg&cx=016550067971777540424:on93fby9gya&q=${
       this.state.inputSearchValue
     }`;
-    fetch(googleSearchURL)
+
+    return fetch(googleSearchURL)
       .then(response => {
         return response.json();
       })
@@ -65,6 +67,30 @@ export default class Home extends React.Component {
     }
   };
 
+  getLinkIcon = link => {
+    const SERVICE_PUBLIC_URL = "www.service-public.fr";
+
+    if (link.includes(SERVICE_PUBLIC_URL)) {
+      const lastPartOfURL = link.substr(link.lastIndexOf("/") + 1);
+
+      if (lastPartOfURL.startsWith("F")) {
+        return (
+          <List.Icon className="fas fa-info-circle" verticalAlign="middle" />
+        );
+      } else if (lastPartOfURL.startsWith("R")) {
+        return (
+          <List.Icon className="fas fa-clipboard-list" verticalAlign="middle" />
+        );
+      } else if (lastPartOfURL.startsWith("A") || link.includes("actualites")) {
+        return (
+          <List.Icon className="far fa-newspaper" verticalAlign="middle" />
+        );
+      } else if (lastPartOfURL.startsWith("N")) {
+        return <List.Icon className="fas fa-folder" verticalAlign="middle" />;
+      }
+    }
+  };
+
   render() {
     console.log(this.state);
     return (
@@ -81,7 +107,7 @@ export default class Home extends React.Component {
               onChange={event => this.updateInputValue(event)}
               onKeyPress={this.handleKeyPress}
             />
-            <Icon name="search" circular link onClick={this.search} />
+            <Icon name="search" link onClick={this.search} />
           </Input>
         </Container>
         {this.state.searchingLoading || this.state.searchResults ? (
@@ -100,13 +126,12 @@ export default class Home extends React.Component {
                       >
                         <List.Content floated="right">
                           <Label>
-                            <a href={displayLinkUrl}>{result.displayLink}</a>
+                            <a href={displayLinkUrl} style={{ color: "black" }}>
+                              {result.displayLink}
+                            </a>
                           </Label>
                         </List.Content>
-                        {/* <Image
-                          avatar
-                          src="https://react.semantic-ui.com/images/avatar/small/lena.png"
-                        /> */}
+                        {this.getLinkIcon(result.link)}
                         <List.Content>
                           <a href={result.link}>
                             <List.Header

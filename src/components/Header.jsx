@@ -12,7 +12,7 @@ export default class Header extends React.Component {
     return (
       <Container text>
         <TextHeader as="h1" style={{ margin: "0.5em 0 1em 0" }}>
-          <i className="fas fa-desktop" /> Desk
+          <i className="fas fa-desktop" /> Desk Agent Polyvalent
         </TextHeader>
       </Container>
     );
