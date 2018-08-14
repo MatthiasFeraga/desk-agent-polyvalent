@@ -19,7 +19,7 @@ export default class LinksContainer extends React.Component {
   render() {
     return (
       <div>
-        <Container text style={style}>
+        <Container style={style}>
           <TextHeader as="h2">
             {this.props.icon} {this.props.name}
           </TextHeader>
@@ -32,7 +32,7 @@ export default class LinksContainer extends React.Component {
                         key={item.description}
                         mobile={8}
                         tablet={4}
-                        computer={4}
+                        computer={3}
                       >
                         <a
                           href={item.link}
@@ -42,9 +42,17 @@ export default class LinksContainer extends React.Component {
                         >
                           <div>
                             <Card>
-                              <Image src={item.image} />
+                              <Image
+                                src={item.image}
+                                size="small"
+                                centered
+                                inline
+                                verticalAlign
+                              />
                               <Card.Content>
-                                <Card.Header>{item.description}</Card.Header>
+                                <Card.Description>
+                                  {item.description}
+                                </Card.Description>
                               </Card.Content>
                             </Card>
                           </div>

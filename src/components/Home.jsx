@@ -34,6 +34,7 @@ export default class Home extends React.Component {
             size="big"
             open={false}
           />
+          <div />
         </Container>
         <LinksContainer
           name="Démarches"
