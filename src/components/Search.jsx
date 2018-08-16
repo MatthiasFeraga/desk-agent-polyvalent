@@ -13,7 +13,7 @@ import { Loader } from "semantic-ui-react";
 
 import Config from "Config";
 
-const style = { paddingTop: "3em", paddingBottom: "3em" };
+const style = { paddingTop: "2em", paddingBottom: "3em" };
 
 export default class Search extends React.Component {
   state = {};
@@ -99,13 +99,22 @@ export default class Search extends React.Component {
       <div>
         <div
           style={{
-            backgroundColor: "rgb(249, 249, 249)"
+            backgroundColor: "#0b6ba8"
           }}
         >
           <Container text style={style}>
+            <h3
+              style={{
+                color: "white",
+                paddingBottom: "0.3em",
+                textAlign: "center"
+              }}
+            >
+              Chercher une information ou une démarche
+            </h3>
             <Input
               icon
-              placeholder="Chercher une information ou une démarche..."
+              placeholder="Ex: Changement d'adresse en ligne"
               size="big"
               fluid
               loading={this.state.searchingLoading}

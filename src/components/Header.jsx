@@ -23,7 +23,6 @@ export default class Header extends React.Component {
     return (
       <div
         style={{
-          backgroundColor: "rgb(236, 236, 236)",
           paddingBottom: "1em"
         }}
       >
