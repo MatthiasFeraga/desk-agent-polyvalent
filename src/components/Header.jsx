@@ -11,9 +11,11 @@ export default class Header extends React.Component {
   render() {
     return (
       <Container text>
-        <TextHeader as="h1" style={{ margin: "0.5em 0 1em 0" }}>
-          <i className="fas fa-desktop" /> Desk Agent Polyvalent
-        </TextHeader>
+        <a href="/home">
+          <TextHeader as="h1" style={{ margin: "0.5em 0 1em 0" }}>
+            <i className="fas fa-desktop" /> Desk Agent Polyvalent
+          </TextHeader>
+        </a>
       </Container>
     );
   }

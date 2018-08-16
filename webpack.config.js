@@ -126,7 +126,8 @@ module.exports = env => {
         Components: path.join(__dirname, "src", "components"),
         Routers: path.join(__dirname, "src", "routers"),
         Actions: path.join(__dirname, "src", "actions"),
-        Data: path.join(__dirname, "src", "data")
+        Data: path.join(__dirname, "src", "data"),
+        Config: path.join(__dirname, "src", "config")
       }
     },
 

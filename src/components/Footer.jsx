@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "semantic-ui-react";
 
 const Footer = () => (
-  <Container text>
+  <Container>
     <hr />
     <div style={{ fontSize: "small" }}>
       © 2018 Desk DITP -{" "}
