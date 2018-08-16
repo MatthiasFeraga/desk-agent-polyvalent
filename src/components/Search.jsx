@@ -13,7 +13,7 @@ import { Loader } from "semantic-ui-react";
 
 import Config from "Config";
 
-const style = { marginTop: "3em" };
+const style = { paddingTop: "3em", paddingBottom: "3em" };
 
 export default class Search extends React.Component {
   state = {};
@@ -97,22 +97,28 @@ export default class Search extends React.Component {
   render() {
     return (
       <div>
-        <Container text style={style}>
-          <Input
-            icon
-            placeholder="Chercher une information ou une démarche..."
-            size="big"
-            fluid
-            loading={this.state.searchingLoading}
-          >
-            <input
-              style={{ borderRadius: "500rem" }}
-              onChange={event => this.updateInputValue(event)}
-              onKeyPress={this.handleKeyPress}
-            />
-            <Icon name="search" link onClick={this.search} />
-          </Input>
-        </Container>
+        <div
+          style={{
+            backgroundColor: "rgb(249, 249, 249)"
+          }}
+        >
+          <Container text style={style}>
+            <Input
+              icon
+              placeholder="Chercher une information ou une démarche..."
+              size="big"
+              fluid
+              loading={this.state.searchingLoading}
+            >
+              <input
+                style={{ borderRadius: "500rem" }}
+                onChange={event => this.updateInputValue(event)}
+                onKeyPress={this.handleKeyPress}
+              />
+              <Icon name="search" link onClick={this.search} />
+            </Input>
+          </Container>
+        </div>
 
         {this.props.showSearchResults ? (
           <Container>
@@ -153,14 +159,18 @@ export default class Search extends React.Component {
                       >
                         <List.Content floated="right">
                           <Label>
-                            <a href={displayLinkUrl} style={{ color: "black" }}>
+                            <a
+                              href={displayLinkUrl}
+                              style={{ color: "black" }}
+                              target="_blank"
+                            >
                               {result.displayLink}
                             </a>
                           </Label>
                         </List.Content>
                         {this.getLinkIcon(result.link)}
                         <List.Content>
-                          <a href={result.link}>
+                          <a href={result.link} target="_blank">
                             <List.Header
                               as="h4"
                               style={{ marginBottom: "0.2em" }}

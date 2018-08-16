@@ -53,12 +53,14 @@ export default class LinksContainer extends React.Component {
                           style={{
                             bottom: "0"
                           }}
+                          target="_blank"
                         >
                           <div>
                             <Card>
                               <Image
                                 src={item.image}
                                 size="small"
+                                style={{ maxHeight: "80px", width: "auto" }}
                                 centered
                                 inline
                                 verticalAlign="middle"

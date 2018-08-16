@@ -23,21 +23,36 @@ export default class Header extends React.Component {
     return (
       <div
         style={{
-          backgroundColor: "rgb(236, 236, 236)"
+          backgroundColor: "rgb(236, 236, 236)",
+          paddingBottom: "1em"
         }}
       >
         <Container>
           <Grid columns="2">
             <Grid.Column floated="left" streched="true">
-              <a href="/home">
-                <TextHeader as="h1" style={{ margin: "0.5em 0 0em 0" }}>
-                  <i className="fas fa-desktop" /> Desk Agent Polyvalent
-                </TextHeader>
-              </a>
+              <Grid>
+                <Grid.Column
+                  mobile={4}
+                  tablet={2}
+                  computer={2}
+                  style={{ textAlign: "right" }}
+                  verticalAlign="middle"
+                >
+                  <i style={{ fontSize: "2em" }} className="fas fa-desktop" />
+                </Grid.Column>
+                <Grid.Column width={11}>
+                  <TextHeader as="h1" style={{ margin: "0.5em 0 0em 0" }}>
+                    <a style={{ color: "black" }} href="/home">
+                      Desk Agent Polyvalent
+                    </a>
+                  </TextHeader>
+                  <span>Cahors</span>
+                </Grid.Column>
+              </Grid>
             </Grid.Column>
             <Grid.Column
               floated="right"
-              style={{ marginTop: "0.8em", textAlign: "right" }}
+              style={{ marginTop: "1.5em", textAlign: "right" }}
               streched="true"
             >
               <Menu text stackable floated="right">
