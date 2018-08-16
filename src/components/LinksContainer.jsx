@@ -19,11 +19,25 @@ export default class LinksContainer extends React.Component {
   render() {
     return (
       <div>
-        <Container style={style}>
-          <TextHeader as="h2">
-            {this.props.icon} {this.props.name}
-          </TextHeader>
-          <div style={{ textAlign: "center" }}>
+        <Container style={style} id={this.props.anchor}>
+          <Grid>
+            <Grid.Column
+              mobile={3}
+              tablet={2}
+              computer={1}
+              style={{ textAlign: "right" }}
+            >
+              {this.props.icon}
+            </Grid.Column>
+            <Grid.Column width={11}>
+              <TextHeader as="h2" style={{ marginBottom: "0em" }}>
+                {this.props.name}
+              </TextHeader>
+              <span>{this.props.description}</span>
+            </Grid.Column>
+          </Grid>
+
+          <div style={{ textAlign: "center", marginTop: "1em" }}>
             <Grid>
               {this.props.links
                 ? this.props.links.map(item => {

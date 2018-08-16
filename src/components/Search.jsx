@@ -113,7 +113,7 @@ export default class Search extends React.Component {
             <Icon name="search" link onClick={this.search} />
           </Input>
         </Container>
-        ;
+
         {this.props.showSearchResults ? (
           <Container>
             <Grid style={{ marginTop: "1em" }}>

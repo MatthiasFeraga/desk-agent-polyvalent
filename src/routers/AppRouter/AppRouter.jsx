@@ -5,10 +5,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Splash, Header, Footer, Home } from "Components";
 
 class AppRouter extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>

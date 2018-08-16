@@ -10,11 +10,15 @@ import AmeliImage from "images/ameli.png";
 import MesAidesImage from "images/mes-aides.jpg";
 import LaBonneBoiteImage from "images/la-bonne-boite.png";
 import LaBonneFormationImage from "images/la-bonne-formation.jpg";
+import ReseauAPlusImage from "images/a-plus.png";
 
 const data = {
   emailDomains: ["cahors.fr", "beta.gouv.fr", "modernisation.gouv.fr"],
-  GoogleSearchCustomApiKey: "AIzaSyDOhofRtJJoZSZ3Jw77Nc6_xA5rvi7fEzg",
-  GoogleSearchID: "016550067971777540424:on93fby9gya",
+  encartTypes: {
+    informations: "informations",
+    demarches: "demarches",
+    reseau: "reseau"
+  },
   informations: [
     {
       name: "Grand Cahors",
@@ -96,6 +100,15 @@ const data = {
       description:
         "Trouvez une formation en fonction de votre profil ET du marché du travail.",
       image: LaBonneFormationImage
+    }
+  ],
+  reseau: [
+    {
+      name: "Réseau A+",
+      link: "https://beta.gouv.fr/startup/aplus.html",
+      description:
+        "La communauté des A+ vous aide à résoudre les blocages administratifs.",
+      image: ReseauAPlusImage
     }
   ]
 };
