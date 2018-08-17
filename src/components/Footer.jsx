@@ -5,7 +5,7 @@ const Footer = () => (
   <Container>
     <hr />
     <div style={{ fontSize: "small" }}>
-      © 2018 Desk DITP -{" "}
+      © 2018 - Desk - Service fourni par la DITP -{" "}
       <a href="mailto:feedbacks@ditp.fr">
         <i className="far fa-envelope" /> Contact
       </a>

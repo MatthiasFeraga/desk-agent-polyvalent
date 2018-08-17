@@ -18,7 +18,17 @@ const style = { paddingTop: "2em", paddingBottom: "3em" };
 export default class Search extends React.Component {
   state = {};
 
-  componentDidMount() {}
+  componentDidMount() {
+    // const scriptGSCRenderer = document.createElement("script");
+    // scriptGSCRenderer.src = "https://cse.google.com/query_renderer.js";
+    // scriptGSCRenderer.async = true;
+    // document.body.appendChild(scriptGSCRenderer);
+    // const scriptGSCAPI = document.createElement("script");
+    // scriptGSCAPI.src =
+    //   "https://cse.google.com/api/016550067971777540424/cse/on93fby9gya/queries/js?view=overall&callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render";
+    // scriptGSCAPI.async = true;
+    // document.body.appendChild(scriptGSCAPI);
+  }
   componentWillUnmount() {}
 
   search = () => {
@@ -43,7 +53,6 @@ export default class Search extends React.Component {
         return response.json();
       })
       .then(json => {
-        console.log(json);
         this.setState({
           searchingLoading: false,
           searchResults: json.items,
@@ -54,9 +63,9 @@ export default class Search extends React.Component {
   };
 
   getLinkIcon = link => {
-    if (link.includes(Config.servicePublicURL)) {
-      const lastPartOfURL = link.substr(link.lastIndexOf("/") + 1);
+    const lastPartOfURL = link.substr(link.lastIndexOf("/") + 1);
 
+    if (link.includes(Config.servicePublicURL)) {
       if (lastPartOfURL.startsWith(Config.servicePublicURLInfo.info)) {
         return (
           <List.Icon className="fas fa-info-circle" verticalAlign="middle" />
@@ -79,6 +88,8 @@ export default class Search extends React.Component {
       ) {
         return <List.Icon className="fas fa-folder" verticalAlign="middle" />;
       }
+    } else if (lastPartOfURL.endsWith(".pdf")) {
+      return <List.Icon className="fas fa-file-pdf" verticalAlign="middle" />;
     }
   };
 
@@ -126,6 +137,20 @@ export default class Search extends React.Component {
               />
               <Icon name="search" link onClick={this.search} />
             </Input>
+            {/* <div
+              style={{
+                color: "white",
+                textAlign: "center"
+              }}
+            >
+              Recherches populaires :{" "}
+              <span
+                style={{
+                  color: "white"
+                }}
+                id="queries"
+              />
+            </div> */}
           </Container>
         </div>
 
