@@ -21,11 +21,7 @@ export default class Header extends React.Component {
     }, {});
 
     return (
-      <div
-        style={{
-          paddingBottom: "1em"
-        }}
-      >
+      <div id="header">
         <Container>
           <Grid columns="2">
             <Grid.Column floated="left" streched="true">
@@ -34,26 +30,20 @@ export default class Header extends React.Component {
                   mobile={4}
                   tablet={2}
                   computer={2}
-                  style={{ textAlign: "right" }}
+                  id="header-left"
                   verticalAlign="middle"
                 >
-                  <i style={{ fontSize: "2em" }} className="fas fa-desktop" />
+                  <i id="logo-header-left" className="fas fa-desktop" />
                 </Grid.Column>
                 <Grid.Column width={11}>
-                  <TextHeader as="h1" style={{ margin: "0.5em 0 0em 0" }}>
-                    <a style={{ color: "black" }} href="/home">
-                      Desk Agent Polyvalent
-                    </a>
+                  <TextHeader as="h1" id="title-header-left">
+                    <a href="/home">Desk Agent Polyvalent</a>
                   </TextHeader>
                   <span>Cahors</span>
                 </Grid.Column>
               </Grid>
             </Grid.Column>
-            <Grid.Column
-              floated="right"
-              style={{ marginTop: "1.5em", textAlign: "right" }}
-              streched="true"
-            >
+            <Grid.Column floated="right" id="header-right" streched="true">
               <Menu text stackable floated="right">
                 <Menu.Item
                   as="a"
@@ -62,7 +52,7 @@ export default class Header extends React.Component {
                   name={linkType.demarches}
                 >
                   <i className="fas fa-clipboard-list" />{" "}
-                  <span style={{ marginLeft: "0.5em" }}>Démarches</span>
+                  <span className="header-right-menu-item">Démarches</span>
                 </Menu.Item>
                 <Menu.Item
                   as="a"
@@ -71,11 +61,11 @@ export default class Header extends React.Component {
                   name="informations"
                 >
                   <i className="fas fa-info-circle" />
-                  <span style={{ marginLeft: "0.5em" }}>Informations</span>
+                  <span className="header-right-menu-item">Informations</span>
                 </Menu.Item>
                 <Menu.Item as="a" href={links.reseau} link name="reseau">
                   <i className="fas fa-hands-helping" />
-                  <span style={{ marginLeft: "0.5em" }}>Réseau</span>
+                  <span className="header-right-menu-item">Réseau</span>
                 </Menu.Item>
               </Menu>
             </Grid.Column>

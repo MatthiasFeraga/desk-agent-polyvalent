@@ -7,8 +7,6 @@ import {
   Card
 } from "semantic-ui-react";
 
-const style = { marginTop: "2em" };
-
 export default class LinksContainer extends React.Component {
   state = {};
 
@@ -19,25 +17,25 @@ export default class LinksContainer extends React.Component {
   render() {
     return (
       <div>
-        <Container style={style} id={this.props.anchor}>
+        <Container className="links-container" id={this.props.anchor}>
           <Grid>
             <Grid.Column
               mobile={3}
               tablet={2}
               computer={1}
-              style={{ textAlign: "right" }}
+              className="links-container-icon-inner"
             >
               {this.props.icon}
             </Grid.Column>
             <Grid.Column width={11}>
-              <TextHeader as="h2" style={{ marginBottom: "0em" }}>
+              <TextHeader as="h2" className="links-container-header">
                 {this.props.name}
               </TextHeader>
               <span>{this.props.description}</span>
             </Grid.Column>
           </Grid>
 
-          <div style={{ textAlign: "center", marginTop: "1em" }}>
+          <div className="links-container-body">
             <Grid>
               {this.props.links
                 ? this.props.links.map(item => {
@@ -48,19 +46,13 @@ export default class LinksContainer extends React.Component {
                         tablet={4}
                         computer={3}
                       >
-                        <a
-                          href={item.link}
-                          style={{
-                            bottom: "0"
-                          }}
-                          target="_blank"
-                        >
+                        <a href={item.link} target="_blank">
                           <div>
                             <Card>
                               <Image
                                 src={item.image}
                                 size="small"
-                                style={{ maxHeight: "80px", width: "auto" }}
+                                className="links-container-image"
                                 centered
                                 inline
                                 verticalAlign="middle"

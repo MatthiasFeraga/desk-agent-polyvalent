@@ -44,7 +44,7 @@ export default class Splash extends React.Component {
             vestibulum at. Nunc accumsan augue sit amet urna scelerisque ornare.
           </p>
         </Message>
-        <Form style={{ textAlign: "center" }}>
+        <Form id="splash-form">
           <Form.Group>
             <Form.Input
               placeholder="email@chaors.fr"

@@ -37,10 +37,7 @@ export default class Home extends React.Component {
             <LinksContainer
               name="Démarches"
               icon={
-                <i
-                  style={{ fontSize: "3em" }}
-                  className="fas fa-clipboard-list"
-                />
+                <i className="fas fa-clipboard-list links-container-icon" />
               }
               description="Effectuer une démarche"
               anchor="demarches"
@@ -48,21 +45,14 @@ export default class Home extends React.Component {
             />
             <LinksContainer
               name="Informations"
-              icon={
-                <i style={{ fontSize: "3em" }} className="fas fa-info-circle" />
-              }
+              icon={<i className="fas fa-info-circle links-container-icon" />}
               description="Trouver l'information"
               anchor="informations"
               links={Data.informations}
             />
             <LinksContainer
               name="Réseau"
-              icon={
-                <i
-                  style={{ fontSize: "3em" }}
-                  className="fas fa-hands-helping"
-                />
-              }
+              icon={<i className="fas fa-hands-helping links-container-icon" />}
               description="Questionner le réseau pour trouver une réponse"
               anchor="reseau"
               links={Data.reseau}

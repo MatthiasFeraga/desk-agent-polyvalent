@@ -9,26 +9,12 @@ import {
   Grid,
   Header
 } from "semantic-ui-react";
-import { Loader } from "semantic-ui-react";
 
 import Config from "Config";
-
-const style = { paddingTop: "2em", paddingBottom: "3em" };
 
 export default class Search extends React.Component {
   state = {};
 
-  componentDidMount() {
-    // const scriptGSCRenderer = document.createElement("script");
-    // scriptGSCRenderer.src = "https://cse.google.com/query_renderer.js";
-    // scriptGSCRenderer.async = true;
-    // document.body.appendChild(scriptGSCRenderer);
-    // const scriptGSCAPI = document.createElement("script");
-    // scriptGSCAPI.src =
-    //   "https://cse.google.com/api/016550067971777540424/cse/on93fby9gya/queries/js?view=overall&callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render";
-    // scriptGSCAPI.async = true;
-    // document.body.appendChild(scriptGSCAPI);
-  }
   componentWillUnmount() {}
 
   search = () => {
@@ -108,21 +94,9 @@ export default class Search extends React.Component {
   render() {
     return (
       <div>
-        <div
-          style={{
-            backgroundColor: "#0b6ba8"
-          }}
-        >
-          <Container text style={style}>
-            <h3
-              style={{
-                color: "white",
-                paddingBottom: "0.3em",
-                textAlign: "center"
-              }}
-            >
-              Chercher une information ou une démarche
-            </h3>
+        <div id="search">
+          <Container text id="search-container">
+            <h3 id="search-text">Chercher une information ou une démarche</h3>
             <Input
               icon
               placeholder="Ex: Changement d'adresse en ligne"
@@ -131,32 +105,18 @@ export default class Search extends React.Component {
               loading={this.state.searchingLoading}
             >
               <input
-                style={{ borderRadius: "500rem" }}
+                id="search-input"
                 onChange={event => this.updateInputValue(event)}
                 onKeyPress={this.handleKeyPress}
               />
               <Icon name="search" link onClick={this.search} />
             </Input>
-            {/* <div
-              style={{
-                color: "white",
-                textAlign: "center"
-              }}
-            >
-              Recherches populaires :{" "}
-              <span
-                style={{
-                  color: "white"
-                }}
-                id="queries"
-              />
-            </div> */}
           </Container>
         </div>
 
         {this.props.showSearchResults ? (
           <Container>
-            <Grid style={{ marginTop: "1em" }}>
+            <Grid id="search-results-container">
               <Grid.Column floated="left" width={5}>
                 <Breadcrumb>
                   <Breadcrumb.Section href="/home">Accueil</Breadcrumb.Section>
@@ -170,7 +130,7 @@ export default class Search extends React.Component {
             </Grid>
 
             <List
-              style={{ marginTop: "2em" }}
+              id="search-results-list"
               divided
               verticalAlign="middle"
               size="big"
@@ -189,15 +149,11 @@ export default class Search extends React.Component {
                     return (
                       <List.Item
                         key={result.title}
-                        style={{ marginTop: "0.3em" }}
+                        className="search-results-list-item"
                       >
                         <List.Content floated="right">
                           <Label>
-                            <a
-                              href={displayLinkUrl}
-                              style={{ color: "black" }}
-                              target="_blank"
-                            >
+                            <a href={displayLinkUrl} target="_blank">
                               {result.displayLink}
                             </a>
                           </Label>
@@ -207,7 +163,7 @@ export default class Search extends React.Component {
                           <a href={result.link} target="_blank">
                             <List.Header
                               as="h4"
-                              style={{ marginBottom: "0.2em" }}
+                              className="search-results-title"
                             >
                               {result.title}
                             </List.Header>
