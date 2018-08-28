@@ -47,7 +47,7 @@ export default class Splash extends React.Component {
         <Form id="splash-form">
           <Form.Group>
             <Form.Input
-              placeholder="email@chaors.fr"
+              placeholder="email@cahors.fr"
               onChange={this.handleChange}
             />
             <Form.Button onClick={this.signIn}>
