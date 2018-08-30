@@ -11,6 +11,13 @@ import MesAidesImage from "images/mes-aides.jpg";
 import LaBonneBoiteImage from "images/la-bonne-boite.png";
 import LaBonneFormationImage from "images/la-bonne-formation.jpg";
 import ReseauAPlusImage from "images/a-plus.png";
+import ANTSImage from "images/ants.png";
+import CNAVImage from "images/cnav.png";
+import DGFIPImage from "images/dgfip.jpg";
+import LaPosteImage from "images/laposte.png";
+import LegiFranceImage from "images/legifrance.jpg";
+import MSAImage from "images/msa.png";
+import PrefetLotImage from "images/prefet-lot.png";
 
 const data = {
   emailDomains: ["cahors.fr", "beta.gouv.fr", "modernisation.gouv.fr"],
@@ -49,9 +56,60 @@ const data = {
       link: "https://lot.fr/",
       description: "Le Departement Lot",
       image: LotDepartementImage
+    },
+    {
+      name: "Agence Nationale des Titres Sécurisés (ANTS)",
+      link: "https://ants.gouv.fr/",
+      description: "Agence Nationale des Titres Sécurisés (ANTS)",
+      image: ANTSImage
+    },
+    {
+      name: "Direction générale des Finances publiques (DGFiP)",
+      link: "https://www.economie.gouv.fr/dgfip",
+      description: "Direction générale des Finances publiques (DGFiP)",
+      image: DGFIPImage
+    },
+    {
+      name: "Caisse Nationale d'Assurance Vieillesse (CNAV)",
+      link: "https://www.lassuranceretraite.fr/portail-info/accueil",
+      description: "Caisse Nationale d'Assurance Vieillesse (CNAV)",
+      image: CNAVImage
+    },
+    {
+      name: "La Poste",
+      link: "https://www.laposte.fr/particulier",
+      description: "La Poste",
+      image: LaPosteImage
+    },
+    {
+      name: "Legifrance",
+      link: "https://www.legifrance.gouv.fr/",
+      description:
+        "Legifrance donne accès au droit français : la Constitution, les codes, lois et règlements, les conventions...",
+      image: LegiFranceImage
+    },
+    {
+      name: "Préfecture du Lot",
+      link: "http://www.lot.gouv.fr/",
+      description: "Préfecture du Lot",
+      image: PrefetLotImage
+    },
+    {
+      name: "MSA",
+      link: "http://www.msa.fr/lfy",
+      description:
+        "La MSA gère la santé, famille, retraite, accidents du travail des exploitants et salariés agricoles, et perçoit les cotisations sociales auprès des entreprises relevant de la MSA.",
+      image: MSAImage
     }
   ],
   demarches: [
+    {
+      name: "Mes Aides",
+      link: "https://mes-aides.gouv.fr/",
+      description:
+        "Evaluez vos droits à 25 aides sociales. En moins de 7 minutes.",
+      image: MesAidesImage
+    },
     {
       name: "Caisse d'Allocation Familliale",
       link:
@@ -81,13 +139,6 @@ const data = {
       image: AmeliImage
     },
     {
-      name: "Mes Aides",
-      link: "https://mes-aides.gouv.fr/",
-      description:
-        "Evaluez vos droits à 25 aides sociales. En moins de 7 minutes.",
-      image: MesAidesImage
-    },
-    {
       name: "La bonne boite",
       link: "https://labonneboite.pole-emploi.fr/",
       description:
@@ -105,7 +156,7 @@ const data = {
   reseau: [
     {
       name: "Réseau A+",
-      link: "https://beta.gouv.fr/startup/aplus.html",
+      link: "https://aplus.beta.gouv.fr/",
       description:
         "La communauté des A+ vous aide à résoudre les blocages administratifs.",
       image: ReseauAPlusImage
@@ -114,3 +165,6 @@ const data = {
 };
 
 module.exports = data;
+
+// http://www.msa-mpn.fr/lfy
+// https://www.lassuranceretraite.fr/portail-info/accueil
