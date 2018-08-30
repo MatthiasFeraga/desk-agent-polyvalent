@@ -165,6 +165,3 @@ const data = {
 };
 
 module.exports = data;
-
-// http://www.msa-mpn.fr/lfy
-// https://www.lassuranceretraite.fr/portail-info/accueil
