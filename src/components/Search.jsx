@@ -54,28 +54,47 @@ export default class Search extends React.Component {
     if (link.includes(Config.servicePublicURL)) {
       if (lastPartOfURL.startsWith(Config.servicePublicURLInfo.info)) {
         return (
-          <List.Icon className="fas fa-info-circle" verticalAlign="middle" />
+          <List.Icon
+            className="fas fa-info-circle big-icon"
+            verticalAlign="middle"
+          />
         );
       } else if (
         lastPartOfURL.startsWith(Config.servicePublicURLInfo.demarche)
       ) {
         return (
-          <List.Icon className="fas fa-clipboard-list" verticalAlign="middle" />
+          <List.Icon
+            className="fas fa-clipboard-list big-icon"
+            verticalAlign="middle"
+          />
         );
       } else if (
         lastPartOfURL.startsWith(Config.servicePublicURLInfo.actualite) ||
         link.includes("actualites")
       ) {
         return (
-          <List.Icon className="far fa-newspaper" verticalAlign="middle" />
+          <List.Icon
+            className="far fa-newspaper big-icon"
+            verticalAlign="middle"
+          />
         );
       } else if (
         lastPartOfURL.startsWith(Config.servicePublicURLInfo.dossier)
       ) {
-        return <List.Icon className="fas fa-folder" verticalAlign="middle" />;
+        return (
+          <List.Icon
+            className="fas fa-folder big-icon"
+            verticalAlign="middle"
+          />
+        );
       }
     } else if (lastPartOfURL.endsWith(".pdf")) {
-      return <List.Icon className="fas fa-file-pdf" verticalAlign="middle" />;
+      return (
+        <List.Icon
+          className="fas fa-file-pdf big-icon"
+          verticalAlign="middle"
+        />
+      );
     }
   };
 
@@ -152,7 +171,7 @@ export default class Search extends React.Component {
                         className="search-results-list-item"
                       >
                         <List.Content floated="right">
-                          <Label>
+                          <Label className="search-label">
                             <a href={displayLinkUrl} target="_blank">
                               {result.displayLink}
                             </a>
