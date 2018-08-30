@@ -1,6 +1,6 @@
 const config = {
-  googleSearchCustomApiKey: "AIzaSyDOhofRtJJoZSZ3Jw77Nc6_xA5rvi7fEzg",
-  googleSearchID: "016550067971777540424:on93fby9gya",
+  googleSearchCustomApiKey: "AIzaSyDJ7jHYE3lVrmGVG-k2053MYm3G42vBwJA",
+  googleSearchID: "014493046936990876322:vavb8pqe6g8",
   get googleSearchURL() {
     return `https://www.googleapis.com/customsearch/v1?key=${
       this.googleSearchCustomApiKey

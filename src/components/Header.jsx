@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Header as TextHeader, Grid, Menu } from "semantic-ui-react";
 
 import Data from "Data";
+import DITPImage from "images/ditp.png";
 
 export default class Header extends React.Component {
   state = {};
@@ -27,15 +28,15 @@ export default class Header extends React.Component {
             <Grid.Column floated="left" streched="true">
               <Grid>
                 <Grid.Column
-                  mobile={4}
-                  tablet={2}
-                  computer={2}
+                  mobile={8}
+                  tablet={4}
+                  computer={4}
                   id="header-left"
                   verticalAlign="middle"
                 >
-                  <i id="logo-header-left" className="fas fa-desktop" />
+                  <img id="ditp-logo" src={DITPImage} />
                 </Grid.Column>
-                <Grid.Column width={11}>
+                <Grid.Column mobile={12} tablet={10} computer={10}>
                   <TextHeader as="h1" id="title-header-left">
                     <a href="/home">Desk Agent Polyvalent</a>
                   </TextHeader>
