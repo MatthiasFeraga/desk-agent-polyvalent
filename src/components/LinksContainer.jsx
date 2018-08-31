@@ -15,10 +15,11 @@ export default class LinksContainer extends React.Component {
   componentWillUnmount() {}
 
   render() {
+    let contentClassName = this.props.anchor + "-encart-content";
     return (
-      <div>
-        <Container className="links-container" id={this.props.anchor}>
-          <Grid>
+      <section id={this.props.anchor}>
+        <Container className="links-container">
+          <Grid as="header">
             <Grid.Column
               mobile={3}
               tablet={2}
@@ -31,7 +32,6 @@ export default class LinksContainer extends React.Component {
               <TextHeader as="h2" className="links-container-header">
                 {this.props.name}
               </TextHeader>
-              <span>{this.props.description}</span>
             </Grid.Column>
           </Grid>
 
@@ -49,15 +49,19 @@ export default class LinksContainer extends React.Component {
                         <a href={item.link} target="_blank">
                           <div>
                             <Card>
-                              <Image
-                                src={item.image}
-                                size="small"
-                                className="links-container-image"
-                                centered
-                                inline
-                                verticalAlign="middle"
-                              />
-                              <Card.Content>
+                              <div style={{ height: "100px" }}>
+                                <span className="image-centered-helper" />
+                                <Image
+                                  src={item.image}
+                                  size="small"
+                                  className="links-container-image"
+                                  centered
+                                  inline
+                                  ui
+                                  verticalAlign="middle"
+                                />
+                              </div>
+                              <Card.Content className={contentClassName}>
                                 <Card.Description>
                                   {item.description}
                                 </Card.Description>
@@ -72,7 +76,7 @@ export default class LinksContainer extends React.Component {
             </Grid>
           </div>
         </Container>
-      </div>
+      </section>
     );
   }
 }

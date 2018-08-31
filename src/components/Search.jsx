@@ -11,6 +11,8 @@ import {
 } from "semantic-ui-react";
 
 import Config from "Config";
+import ServicePublicImage from "images/service-public.png";
+import Data from "Data";
 
 export default class Search extends React.Component {
   state = {};
@@ -48,14 +50,36 @@ export default class Search extends React.Component {
       });
   };
 
+  getImageFromURL = url => {
+    const linksArray = [
+      ...Data.informations,
+      ...Data.demarches,
+      ...Data.reseaux
+    ];
+
+    const image = linksArray
+      .filter(site => {
+        return site.link.includes(url);
+      })
+      .map(site => {
+        return site.image;
+      });
+
+    return image ? image.reduce((_, value) => value) : null;
+  };
+
   getLinkIcon = link => {
     const lastPartOfURL = link.substr(link.lastIndexOf("/") + 1);
 
     if (link.includes(Config.servicePublicURL)) {
-      if (lastPartOfURL.startsWith(Config.servicePublicURLInfo.info)) {
+      if (
+        lastPartOfURL.startsWith(Config.servicePublicURLInfo.info) ||
+        lastPartOfURL.startsWith(Config.servicePublicURLInfo.dossier)
+      ) {
         return (
           <List.Icon
-            className="fas fa-info-circle big-icon"
+            className="fas fa-info-circle big-icon informations-color"
+            title="Information"
             verticalAlign="middle"
           />
         );
@@ -64,7 +88,8 @@ export default class Search extends React.Component {
       ) {
         return (
           <List.Icon
-            className="fas fa-clipboard-list big-icon"
+            className="fas fa-clipboard-list big-icon demarches-color"
+            title="Démarche"
             verticalAlign="middle"
           />
         );
@@ -75,15 +100,7 @@ export default class Search extends React.Component {
         return (
           <List.Icon
             className="far fa-newspaper big-icon"
-            verticalAlign="middle"
-          />
-        );
-      } else if (
-        lastPartOfURL.startsWith(Config.servicePublicURLInfo.dossier)
-      ) {
-        return (
-          <List.Icon
-            className="fas fa-folder big-icon"
+            title="Actualité"
             verticalAlign="middle"
           />
         );
@@ -95,6 +112,37 @@ export default class Search extends React.Component {
           verticalAlign="middle"
         />
       );
+    } else {
+      return (
+        <List.Icon className="blank-icon" verticalAlign="middle">
+          {" "}
+        </List.Icon>
+      );
+    }
+  };
+
+  getLinkAccessibilityName = link => {
+    const lastPartOfURL = link.substr(link.lastIndexOf("/") + 1);
+
+    if (link.includes(Config.servicePublicURL)) {
+      if (lastPartOfURL.startsWith(Config.servicePublicURLInfo.info)) {
+        return <span className="outer-window">Information</span>;
+      } else if (
+        lastPartOfURL.startsWith(Config.servicePublicURLInfo.demarche)
+      ) {
+        return <span className="outer-window">Démarche</span>;
+      } else if (
+        lastPartOfURL.startsWith(Config.servicePublicURLInfo.actualite) ||
+        link.includes("actualites")
+      ) {
+        return <span className="outer-window">Actualité</span>;
+      } else if (
+        lastPartOfURL.startsWith(Config.servicePublicURLInfo.dossier)
+      ) {
+        return <span className="outer-window">Dossier</span>;
+      }
+    } else if (lastPartOfURL.endsWith(".pdf")) {
+      return <span className="outer-window">Fichier PDF</span>;
     }
   };
 
@@ -143,9 +191,6 @@ export default class Search extends React.Component {
                   <Breadcrumb.Section active>Recherche</Breadcrumb.Section>
                 </Breadcrumb>
               </Grid.Column>
-              <Grid.Column floated="right" width={2}>
-                <i>{this.state.searchTotalResults} résultat(s)</i>
-              </Grid.Column>
             </Grid>
 
             <List
@@ -170,24 +215,45 @@ export default class Search extends React.Component {
                         key={result.title}
                         className="search-results-list-item"
                       >
-                        <List.Content floated="right">
+                        {this.getLinkAccessibilityName(result.link)}
+                        {/* <List.Content floated="right">
                           <Label className="search-label">
                             <a href={displayLinkUrl} target="_blank">
                               {result.displayLink}
                             </a>
                           </Label>
-                        </List.Content>
+                        </List.Content> */}
                         {this.getLinkIcon(result.link)}
                         <List.Content>
-                          <a href={result.link} target="_blank">
-                            <List.Header
-                              as="h4"
-                              className="search-results-title"
+                          <Grid>
+                            <Grid.Column
+                              width="2"
+                              textAlign="center"
+                              verticalAlign="middle"
                             >
-                              {result.title}
-                            </List.Header>
-                            {result.snippet}
-                          </a>
+                              <img
+                                style={{ maxWidth: "80px", maxHeight: "30px" }}
+                                src={this.getImageFromURL(
+                                  result.displayLink.replace("www.", "")
+                                )}
+                              />
+                              <br />
+                              <span className="search-label">
+                                {result.displayLink.replace("www.", "")}
+                              </span>
+                            </Grid.Column>
+                            <Grid.Column width="14">
+                              <a href={result.link} target="_blank">
+                                <List.Header
+                                  as="h4"
+                                  className="search-results-title"
+                                >
+                                  {result.title}
+                                </List.Header>
+                                {result.snippet}
+                              </a>
+                            </Grid.Column>
+                          </Grid>
                         </List.Content>
                       </List.Item>
                     );

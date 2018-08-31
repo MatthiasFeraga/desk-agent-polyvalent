@@ -54,8 +54,8 @@ export default class Home extends React.Component {
               name="Réseau"
               icon={<i className="fas fa-hands-helping links-container-icon" />}
               description="Questionner le réseau pour trouver une réponse"
-              anchor="reseau"
-              links={Data.reseau}
+              anchor="reseaux"
+              links={Data.reseaux}
             />
           </div>
         ) : null}

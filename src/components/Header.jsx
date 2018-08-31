@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Header as TextHeader, Grid, Menu } from "semantic-ui-react";
 
 import Data from "Data";
-import DITPImage from "images/ditp.png";
+import MarianneImage from "images/marianne.png";
 
 export default class Header extends React.Component {
   state = {};
@@ -34,9 +34,9 @@ export default class Header extends React.Component {
                   id="header-left"
                   verticalAlign="middle"
                 >
-                  <img id="ditp-logo" src={DITPImage} />
+                  <img id="marianne-logo" src={MarianneImage} />
                 </Grid.Column>
-                <Grid.Column mobile={12} tablet={10} computer={10}>
+                <Grid.Column width="12">
                   <TextHeader as="h1" id="title-header-left">
                     <a href="/home">Desk Agent Polyvalent</a>
                   </TextHeader>
@@ -64,7 +64,7 @@ export default class Header extends React.Component {
                   <i className="fas fa-info-circle" />
                   <span className="header-right-menu-item">Informations</span>
                 </Menu.Item>
-                <Menu.Item as="a" href={links.reseau} link name="reseau">
+                <Menu.Item as="a" href={links.reseaux} link name="reseaux">
                   <i className="fas fa-hands-helping" />
                   <span className="header-right-menu-item">Réseau</span>
                 </Menu.Item>

@@ -24,7 +24,7 @@ const data = {
   encartTypes: {
     informations: "informations",
     demarches: "demarches",
-    reseau: "reseau"
+    reseaux: "reseaux"
   },
   informations: [
     {
@@ -153,7 +153,7 @@ const data = {
       image: LaBonneFormationImage
     }
   ],
-  reseau: [
+  reseaux: [
     {
       name: "Réseau A+",
       link: "https://aplus.beta.gouv.fr/",

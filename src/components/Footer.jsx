@@ -1,17 +1,46 @@
 import React from "react";
-import { Container } from "semantic-ui-react";
+import { Container, Grid } from "semantic-ui-react";
+
+import DITPImage from "images/ditp.jpg";
+import DINSICImage from "images/dinsic.png";
 
 const Footer = () => (
-  <div>
-    <div id="footer">
-      <hr />
-      <Container id="footer-container">
-        © 2018 - Desk - Service fourni par la DITP -{" "}
-        <a href="mailto:feedbacks@ditp.fr">
-          <i className="far fa-envelope" /> Contact
-        </a>
-      </Container>
-    </div>
+  <div id="footer">
+    <Container id="footer-container">
+      <Grid columns="2">
+        <Grid.Column floated="left" streched="true">
+          <p>
+            <i>Un service fourni par la DITP et porté par la DINSIC</i>
+            <br />
+            <img
+              style={{ height: "100px", marginTop: "1em" }}
+              src={DITPImage}
+            />
+            <img
+              style={{ height: "100px", marginTop: "1em" }}
+              src={DINSICImage}
+            />
+          </p>
+        </Grid.Column>
+        <Grid.Column floated="right" streched="true">
+          <Grid.Row>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+            eget mi id libero eleifend accumsan non sit amet risus. Quisque
+            turpis sem, pharetra in nibh ac, volutpat imperdiet mi.
+          </Grid.Row>
+          <Grid.Row style={{ marginTop: "1em" }}>
+            <a href="mailto:feedbacks@ditp.fr">
+              <span
+                className="far fa-envelope"
+                title="mail"
+                aria-hidden="true"
+              />
+              <span className="outer-window">Mail</span> Contact
+            </a>
+          </Grid.Row>
+        </Grid.Column>
+      </Grid>
+    </Container>
   </div>
 );
 

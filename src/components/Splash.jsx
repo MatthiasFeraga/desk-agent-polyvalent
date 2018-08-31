@@ -35,7 +35,7 @@ export default class Splash extends React.Component {
     return this.state.loggedIn ? (
       <Redirect to="/home" />
     ) : (
-      <Container text>
+      <Container text id="splash-container">
         <Message>
           <Message.Header>Connexion</Message.Header>
           <p>
@@ -51,7 +51,12 @@ export default class Splash extends React.Component {
               onChange={this.handleChange}
             />
             <Form.Button onClick={this.signIn}>
-              <i className="fas fa-sign-in-alt" />
+              <span
+                className="fas fa-sign-in-alt"
+                aria-hidden="true"
+                title="entrer"
+              />
+              <span class="outer-window">Entrer</span>
             </Form.Button>
           </Form.Group>
         </Form>

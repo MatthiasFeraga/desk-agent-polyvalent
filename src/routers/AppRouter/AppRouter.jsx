@@ -7,16 +7,18 @@ import { Splash, Header, Footer, Home } from "Components";
 class AppRouter extends React.Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Header />
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={Splash} />
-            <Route exact path="/home" component={Home} />
-          </Switch>
-        </BrowserRouter>
+        <div id="content">
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/" component={Splash} />
+              <Route exact path="/home" component={Home} />
+            </Switch>
+          </BrowserRouter>
+        </div>
         <Footer />
-      </div>
+      </React.Fragment>
     );
   }
 }

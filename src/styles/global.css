@@ -2,12 +2,53 @@
   font-family: "Roboto", "Open Sans", sans-serif;
 }
 
+:root {
+  --demarches-color: #a8d1df;
+  --informations-color: #eee7b5;
+  --reseaux-color: #fcbf2f;
+}
+
+.demarches-color {
+  color: var(--demarches-color);
+}
+
+.informations-color {
+  color: var(--informations-color);
+}
+
+.reseaux-color {
+  color: var(--reseaux-color);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 100% !important;
+}
+
+#content {
+  flex: 1;
+  margin-top: auto;
+}
+
 a {
   color: black;
 }
 
+#app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 #footer {
-  background-color: #f2f2f2;
+  background-color: #414855;
+  color: white;
+  flex-shrink: 0;
+  margin-top: 1em;
 }
 
 #footer-container {
@@ -16,7 +57,11 @@ a {
 }
 
 #header {
-  padding-bottom: 0.3em;
+  padding-bottom: 1em;
+}
+
+#splash-container {
+  margin-top: 4em;
 }
 
 h1 > a {
@@ -32,7 +77,8 @@ h1 > a {
 }
 
 #title-header-left {
-  margin: 0.5em 0 0em 0;
+  margin: 1em 0 0em 0;
+  font-size: 1.5em;
 }
 
 #header-right {
@@ -72,6 +118,26 @@ h1 > a {
 .links-container-image {
   max-height: 80px !important;
   width: auto !important;
+  background-color: white !important;
+  vertical-align: middle;
+}
+
+.image-centered-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.ui.card > .demarches-encart-content {
+  border-top: 4px solid var(--demarches-color) !important;
+}
+
+.ui.card > .informations-encart-content {
+  border-top: 4px solid var(--informations-color) !important;
+}
+
+.ui.card > .reseaux-encart-content {
+  border-top: 4px solid var(--reseaux-color) !important;
 }
 
 #search {
@@ -117,16 +183,47 @@ h1 > a {
   text-align: center;
 }
 
-#ditp-logo {
-  width: 135px;
-  margin-top: 7px;
+#marianne-logo {
+  width: 60px;
+  margin-top: 1em !important;
 }
 
 .big-icon {
-  font-size: 2em !important;
+  font-size: 2.5em !important;
 }
 
-.search-label > a {
-  color: black !important;
-  font-size: 1.2em !important;
+.search-label {
+  color: grey !important;
+  font-size: small !important;
+}
+
+.outer-window {
+  position: absolute;
+  left: -99999rem;
+}
+
+.blank-icon {
+  font-size: 2em !important;
+  width: 60px !important;
+}
+
+section {
+  padding-top: 3em;
+  padding-bottom: 5em;
+}
+
+#demarches {
+  background-color: white;
+}
+
+#informations {
+  background-color: white;
+}
+
+#reseaux {
+  background-color: white;
+}
+
+.links-container-header {
+  font-size: 3em !important;
 }
