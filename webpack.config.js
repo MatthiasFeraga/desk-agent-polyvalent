@@ -86,7 +86,7 @@ module.exports = env => {
     plugins: [
       new HTMLPlugin({
         filename: "index.html",
-        title: "DITP | Desk",
+        title: "Desk Agent Polyvalent | Cahors",
         template: "./src/templates/index.html",
         minify: {
           collapseWhitespace: isProduction
