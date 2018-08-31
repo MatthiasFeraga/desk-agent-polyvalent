@@ -18,6 +18,7 @@ import LaPosteImage from "images/laposte.png";
 import LegiFranceImage from "images/legifrance.jpg";
 import MSAImage from "images/msa.png";
 import PrefetLotImage from "images/prefet-lot.png";
+import ACToulouseImage from "images/ac-toulouse.png";
 
 const data = {
   emailDomains: ["cahors.fr", "beta.gouv.fr", "modernisation.gouv.fr"],
@@ -28,28 +29,16 @@ const data = {
   },
   informations: [
     {
-      name: "Grand Cahors",
-      link: "http://www.grandcahors.fr/IMG/html/presse.html",
-      description: "Grand Cahors",
-      image: GrandCahorsImage
-    },
-    {
       name: "Mairie de Cahors",
       link: "http://www.mairie-cahors.fr/cahors/numero01.html",
       description: "Mairie de Cahors",
       image: MairieCahorsImage
     },
     {
-      name: "Service Public",
-      link: "https://www.service-public.fr/",
-      description: "Service Public",
-      image: ServicePublicImage
-    },
-    {
-      name: "La Région Occitanie",
-      link: "https://www.laregion.fr/",
-      description: "La Région Occitanie",
-      image: LaRegionImage
+      name: "Grand Cahors",
+      link: "http://www.grandcahors.fr/IMG/html/presse.html",
+      description: "Grand Cahors",
+      image: GrandCahorsImage
     },
     {
       name: "Le Departement Lot",
@@ -58,35 +47,10 @@ const data = {
       image: LotDepartementImage
     },
     {
-      name: "Agence Nationale des Titres Sécurisés (ANTS)",
-      link: "https://ants.gouv.fr/",
-      description: "Agence Nationale des Titres Sécurisés (ANTS)",
-      image: ANTSImage
-    },
-    {
-      name: "Direction générale des Finances publiques (DGFiP)",
-      link: "https://www.economie.gouv.fr/dgfip",
-      description: "Direction générale des Finances publiques (DGFiP)",
-      image: DGFIPImage
-    },
-    {
-      name: "Caisse Nationale d'Assurance Vieillesse (CNAV)",
-      link: "https://www.lassuranceretraite.fr/portail-info/accueil",
-      description: "Caisse Nationale d'Assurance Vieillesse (CNAV)",
-      image: CNAVImage
-    },
-    {
-      name: "La Poste",
-      link: "https://www.laposte.fr/particulier",
-      description: "La Poste",
-      image: LaPosteImage
-    },
-    {
-      name: "Legifrance",
-      link: "https://www.legifrance.gouv.fr/",
-      description:
-        "Legifrance donne accès au droit français : la Constitution, les codes, lois et règlements, les conventions...",
-      image: LegiFranceImage
+      name: "La Région Occitanie",
+      link: "https://www.laregion.fr/",
+      description: "La Région Occitanie",
+      image: LaRegionImage
     },
     {
       name: "Préfecture du Lot",
@@ -95,11 +59,18 @@ const data = {
       image: PrefetLotImage
     },
     {
-      name: "MSA",
-      link: "http://www.msa.fr/lfy",
+      name: "Service Public",
+      link: "https://www.service-public.fr/",
+      description: "Service Public",
+      image: ServicePublicImage
+    },
+
+    {
+      name: "Legifrance",
+      link: "https://www.legifrance.gouv.fr/",
       description:
-        "La MSA gère la santé, famille, retraite, accidents du travail des exploitants et salariés agricoles, et perçoit les cotisations sociales auprès des entreprises relevant de la MSA.",
-      image: MSAImage
+        "Legifrance donne accès au droit français : la Constitution, les codes, lois et règlements, les conventions...",
+      image: LegiFranceImage
     }
   ],
   demarches: [
@@ -124,13 +95,6 @@ const data = {
       image: MonEnfantImage
     },
     {
-      name: "Pôle Emploi",
-      link:
-        "https://www.pole-emploi.fr/candidat/votre-espace-personnel-votre-tableau-de-bord-unique--@/index.jspz",
-      description: "Espace personnel Pôle Emploi",
-      image: PoleEmploiImage
-    },
-    {
       name: "Assurance Maladie",
       link:
         "https://assure.ameli.fr/PortailAS/appmanager/PortailAS/assure?_somtc=true",
@@ -138,6 +102,14 @@ const data = {
         "Compte ameli : suivi de remboursement, démarches en ligne, attestations...",
       image: AmeliImage
     },
+    {
+      name: "Pôle Emploi",
+      link:
+        "https://www.pole-emploi.fr/candidat/votre-espace-personnel-votre-tableau-de-bord-unique--@/index.jspz",
+      description: "Espace personnel Pôle Emploi",
+      image: PoleEmploiImage
+    },
+
     {
       name: "La bonne boite",
       link: "https://labonneboite.pole-emploi.fr/",
@@ -151,6 +123,43 @@ const data = {
       description:
         "Trouvez une formation en fonction de votre profil ET du marché du travail.",
       image: LaBonneFormationImage
+    },
+    {
+      name: "Agence Nationale des Titres Sécurisés (ANTS)",
+      link: "https://ants.gouv.fr/",
+      description: "Agence Nationale des Titres Sécurisés (ANTS)",
+      image: ANTSImage
+    },
+    {
+      name: "Direction générale des Finances publiques (DGFiP)",
+      link: "https://www.economie.gouv.fr/dgfip/services-en-ligne",
+      description: "Direction générale des Finances publiques (DGFiP)",
+      image: DGFIPImage
+    },
+    {
+      name: "Caisse Nationale d'Assurance Vieillesse (CNAV)",
+      link: "https://www.lassuranceretraite.fr/portail-info/accueil",
+      description: "Caisse Nationale d'Assurance Vieillesse (CNAV)",
+      image: CNAVImage
+    },
+    {
+      name: "MSA",
+      link: "http://www.msa.fr/lfy",
+      description:
+        "La MSA gère la santé, famille, retraite, accidents du travail des exploitants et salariés agricoles.",
+      image: MSAImage
+    },
+    {
+      name: "Académie de Toulouse",
+      link: "http://www.ac-toulouse.fr/",
+      description: "Académie de Toulouse",
+      image: ACToulouseImage
+    },
+    {
+      name: "La Poste",
+      link: "https://www.laposte.fr/particulier",
+      description: "La Poste",
+      image: LaPosteImage
     }
   ],
   reseaux: [

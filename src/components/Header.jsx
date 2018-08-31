@@ -37,7 +37,11 @@ export default class Header extends React.Component {
                   <img id="marianne-logo" src={MarianneImage} />
                 </Grid.Column>
                 <Grid.Column width="12">
-                  <TextHeader as="h1" id="title-header-left">
+                  <TextHeader
+                    as="h1"
+                    id="title-header-left"
+                    style={{ fontSize: "1.1em" }}
+                  >
                     <a href="/home">Desk Agent Polyvalent</a>
                   </TextHeader>
                   <span>Cahors</span>
@@ -51,6 +55,7 @@ export default class Header extends React.Component {
                   href={links.demarches}
                   link
                   name={linkType.demarches}
+                  style={{ marginLeft: "1em" }}
                 >
                   <i className="fas fa-list-ol demarches-color" />{" "}
                   <span className="header-right-menu-item">Démarches</span>
@@ -60,11 +65,18 @@ export default class Header extends React.Component {
                   href={links.informations}
                   link
                   name="informations"
+                  style={{ marginLeft: "1em" }}
                 >
                   <i className="fas fa-info-circle informations-color" />
                   <span className="header-right-menu-item">Informations</span>
                 </Menu.Item>
-                <Menu.Item as="a" href={links.reseaux} link name="reseaux">
+                <Menu.Item
+                  as="a"
+                  href={links.reseaux}
+                  link
+                  name="reseaux"
+                  style={{ marginLeft: "1em" }}
+                >
                   <i className="fas fa-hands-helping reseaux-color" />
                   <span className="header-right-menu-item">Réseau</span>
                 </Menu.Item>

@@ -56,7 +56,7 @@ export default class Splash extends React.Component {
                 aria-hidden="true"
                 title="entrer"
               />
-              <span class="outer-window">Entrer</span>
+              <span className="outer-window">Entrer</span>
             </Form.Button>
           </Form.Group>
         </Form>

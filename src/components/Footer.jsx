@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Grid } from "semantic-ui-react";
 
-import DITPImage from "images/ditp.jpg";
+import DITPImage from "images/ditp.png";
 import DINSICImage from "images/dinsic.png";
 
 const Footer = () => (
@@ -10,16 +10,25 @@ const Footer = () => (
       <Grid columns="2">
         <Grid.Column floated="left" streched="true">
           <p>
-            <i>Un service fourni par la DITP et porté par la DINSIC</i>
+            <i>
+              Un service fourni par la DITP <br />
+              et porté par la DINSIC
+            </i>
             <br />
-            <img
-              style={{ height: "100px", marginTop: "1em" }}
-              src={DITPImage}
-            />
-            <img
-              style={{ height: "100px", marginTop: "1em" }}
-              src={DINSICImage}
-            />
+            <a href="http://www.modernisation.gouv.fr" target="_blank">
+              <img
+                style={{ height: "100px", marginTop: "1em" }}
+                src={DITPImage}
+              />
+              <img
+                style={{
+                  height: "100px",
+                  marginTop: "1em",
+                  marginLeft: "10px"
+                }}
+                src={DINSICImage}
+              />
+            </a>
           </p>
         </Grid.Column>
         <Grid.Column floated="right" streched="true">
