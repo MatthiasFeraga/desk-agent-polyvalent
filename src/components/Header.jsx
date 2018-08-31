@@ -52,7 +52,7 @@ export default class Header extends React.Component {
                   link
                   name={linkType.demarches}
                 >
-                  <i className="fas fa-clipboard-list" />{" "}
+                  <i className="fas fa-list-ol demarches-color" />{" "}
                   <span className="header-right-menu-item">Démarches</span>
                 </Menu.Item>
                 <Menu.Item
@@ -61,11 +61,11 @@ export default class Header extends React.Component {
                   link
                   name="informations"
                 >
-                  <i className="fas fa-info-circle" />
+                  <i className="fas fa-info-circle informations-color" />
                   <span className="header-right-menu-item">Informations</span>
                 </Menu.Item>
                 <Menu.Item as="a" href={links.reseaux} link name="reseaux">
-                  <i className="fas fa-hands-helping" />
+                  <i className="fas fa-hands-helping reseaux-color" />
                   <span className="header-right-menu-item">Réseau</span>
                 </Menu.Item>
               </Menu>

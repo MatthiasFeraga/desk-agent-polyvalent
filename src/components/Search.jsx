@@ -88,7 +88,7 @@ export default class Search extends React.Component {
       ) {
         return (
           <List.Icon
-            className="fas fa-clipboard-list big-icon demarches-color"
+            className="fas fa-list-ol big-icon demarches-color"
             title="Démarche"
             verticalAlign="middle"
           />
@@ -99,7 +99,7 @@ export default class Search extends React.Component {
       ) {
         return (
           <List.Icon
-            className="far fa-newspaper big-icon"
+            className="far fa-newspaper big-icon icon-grey"
             title="Actualité"
             verticalAlign="middle"
           />
@@ -108,7 +108,7 @@ export default class Search extends React.Component {
     } else if (lastPartOfURL.endsWith(".pdf")) {
       return (
         <List.Icon
-          className="fas fa-file-pdf big-icon"
+          className="fas fa-file-pdf big-icon icon-grey"
           verticalAlign="middle"
         />
       );
@@ -224,12 +224,13 @@ export default class Search extends React.Component {
                           </Label>
                         </List.Content> */}
                         {this.getLinkIcon(result.link)}
-                        <List.Content>
+                        <List.Content style={{ fontSize: "1rem" }}>
                           <Grid>
                             <Grid.Column
                               width="2"
                               textAlign="center"
                               verticalAlign="middle"
+                              style={{ maxWidth: "80px" }}
                             >
                               <img
                                 style={{ maxWidth: "80px", maxHeight: "30px" }}
@@ -243,15 +244,13 @@ export default class Search extends React.Component {
                               </span>
                             </Grid.Column>
                             <Grid.Column width="14">
-                              <a href={result.link} target="_blank">
-                                <List.Header
-                                  as="h4"
-                                  className="search-results-title"
-                                >
+                              <List.Header className="search-results-title">
+                                <a href={result.link} target="_blank">
                                   {result.title}
-                                </List.Header>
-                                {result.snippet}
-                              </a>
+                                </a>
+                              </List.Header>
+
+                              {result.snippet}
                             </Grid.Column>
                           </Grid>
                         </List.Content>

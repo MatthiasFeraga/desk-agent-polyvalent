@@ -3,9 +3,13 @@
 }
 
 :root {
-  --demarches-color: #a8d1df;
-  --informations-color: #eee7b5;
-  --reseaux-color: #fcbf2f;
+  --demarches-color: #9b2fae;
+  --informations-color: #30a64a;
+  --reseaux-color: #fb5830;
+}
+
+.icon-grey {
+  color: #eee;
 }
 
 .demarches-color {
@@ -45,10 +49,10 @@ a {
 }
 
 #footer {
-  background-color: #414855;
-  color: white;
+  background-color: #f8f8f8;
   flex-shrink: 0;
   margin-top: 1em;
+  border-top: 1px solid #ccc;
 }
 
 #footer-container {
@@ -176,7 +180,9 @@ h1 > a {
 }
 
 .search-results-title > a {
-  color: rgba(0, 0, 0, 0.4) !important;
+  color: black !important;
+  font-size: 1.2em !important;
+  font-style: "strong" !important;
 }
 
 #splash-form {
@@ -208,7 +214,7 @@ h1 > a {
 }
 
 section {
-  padding-top: 3em;
+  padding-top: 2em;
   padding-bottom: 5em;
 }
 
@@ -217,7 +223,7 @@ section {
 }
 
 #informations {
-  background-color: white;
+  background-color: #f8f8f8;
 }
 
 #reseaux {
@@ -226,4 +232,8 @@ section {
 
 .links-container-header {
   font-size: 3em !important;
+}
+
+.ui.card {
+  border: none !important;
 }
