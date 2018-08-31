@@ -33,9 +33,8 @@ const Footer = () => (
         </Grid.Column>
         <Grid.Column floated="right" streched="true">
           <Grid.Row>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            eget mi id libero eleifend accumsan non sit amet risus. Quisque
-            turpis sem, pharetra in nibh ac, volutpat imperdiet mi.
+            Portail de ressources pour les agents polyvalents de Cahors.
+            Retrouvez toutes les informations utiles pour vos démarches.
           </Grid.Row>
           <Grid.Row style={{ marginTop: "1em" }}>
             <a href="mailto:feedbacks@ditp.fr">

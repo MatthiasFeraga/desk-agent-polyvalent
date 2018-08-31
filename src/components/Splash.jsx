@@ -1,5 +1,10 @@
 import React from "react";
-import { Container, Header as TextHeader, Message } from "semantic-ui-react";
+import {
+  Container,
+  Header as TextHeader,
+  Message,
+  Grid
+} from "semantic-ui-react";
 import { Form, Input } from "semantic-ui-react";
 import { Redirect } from "react-router";
 import Data from "Data";
@@ -32,39 +37,29 @@ export default class Splash extends React.Component {
   };
 
   render() {
-    return this.state.loggedIn ? (
-      <Redirect to="/home" />
-    ) : (
-      <Container text id="splash-container">
-        <Message>
-          <Message.Header>Connexion</Message.Header>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac
-            nunc sapien. Donec dapibus ipsum est, vitae tincidunt justo
-            vestibulum at. Nunc accumsan augue sit amet urna scelerisque ornare.
-          </p>
-        </Message>
-        <Form id="splash-form">
-          <Form.Group>
-            <Form.Input
-              placeholder="email@cahors.fr"
-              onChange={this.handleChange}
-            />
-            <Form.Button onClick={this.signIn}>
-              <span
-                className="fas fa-sign-in-alt"
-                aria-hidden="true"
-                title="entrer"
-              />
-              <span className="outer-window">Entrer</span>
-            </Form.Button>
-          </Form.Group>
-        </Form>
-        {this.state.loginError ? (
-          <Message warning>
-            <p>{this.state.loginError}</p>
-          </Message>
-        ) : null}
+    this.state.loggedIn ? (window.location.pathname = "/home") : null;
+    return (
+      <Container text id="splash-container" style={{ textAlign: "center" }}>
+        <Grid>
+          <Grid.Column mobile={8} tablet={13} computer={13} floated="right">
+            <Form id="splash-form">
+              <Form.Group>
+                <Form.Input
+                  placeholder="email@cahors.fr"
+                  onChange={this.handleChange}
+                />
+                <Form.Button onClick={this.signIn}>
+                  <span>Me connecter</span>
+                </Form.Button>
+              </Form.Group>
+            </Form>
+            {this.state.loginError ? (
+              <Message warning>
+                <p>{this.state.loginError}</p>
+              </Message>
+            ) : null}
+          </Grid.Column>
+        </Grid>
       </Container>
     );
   }

@@ -184,7 +184,7 @@ export default class Search extends React.Component {
         {this.props.showSearchResults ? (
           <Container>
             <Grid id="search-results-container">
-              <Grid.Column floated="left" width={5}>
+              <Grid.Column floated="left" width={5} style={{ display: "none" }}>
                 <Breadcrumb>
                   <Breadcrumb.Section href="/home">Accueil</Breadcrumb.Section>
                   <Breadcrumb.Divider icon="right arrow" />
@@ -230,7 +230,7 @@ export default class Search extends React.Component {
                               width="2"
                               textAlign="center"
                               verticalAlign="middle"
-                              style={{ maxWidth: "80px" }}
+                              style={{ width: "100px" }}
                             >
                               <img
                                 style={{ maxWidth: "80px", maxHeight: "30px" }}

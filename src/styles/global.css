@@ -169,11 +169,12 @@ h1 > a {
 }
 
 #search-results-container {
-  margin-top: "1em" !important;
+  margin-top: 2em !important;
 }
 
 #search-results-list {
-  margin-top: "2em" !important;
+  margin-top: 2em !important;
+  margin-bottom: 2em !important;
 }
 
 .search-results-list-item {
@@ -201,6 +202,7 @@ h1 > a {
 
 .big-icon {
   font-size: 2.5em !important;
+  width: 100px !important;
 }
 
 .search-label {
@@ -215,7 +217,7 @@ h1 > a {
 
 .blank-icon {
   font-size: 2em !important;
-  width: 60px !important;
+  width: 100px !important;
 }
 
 section {
