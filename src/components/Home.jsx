@@ -44,15 +44,6 @@ export default class Home extends React.Component {
               links={Data.demarches}
             />
             <LinksContainer
-              name="Informations"
-              icon={
-                <i className="fas fa-info-circle links-container-icon informations-color" />
-              }
-              description="Trouver l'information"
-              anchor="informations"
-              links={Data.informations}
-            />
-            <LinksContainer
               name="Réseau"
               icon={
                 <i className="fas fa-hands-helping links-container-icon reseaux-color" />
@@ -60,6 +51,15 @@ export default class Home extends React.Component {
               description="Questionner le réseau pour trouver une réponse"
               anchor="reseaux"
               links={Data.reseaux}
+            />
+            <LinksContainer
+              name="Informations"
+              icon={
+                <i className="fas fa-info-circle links-container-icon informations-color" />
+              }
+              description="Trouver l'information"
+              anchor="informations"
+              links={Data.informations}
             />
           </div>
         ) : null}

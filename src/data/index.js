@@ -19,6 +19,8 @@ import LegiFranceImage from "images/legifrance.jpg";
 import MSAImage from "images/msa.png";
 import PrefetLotImage from "images/prefet-lot.png";
 import ACToulouseImage from "images/ac-toulouse.png";
+import FranceConnectImage from "images/france-connect.png";
+import TrenteNeufImage from "images/3939.png";
 
 const data = {
   emailDomains: ["cahors.fr", "beta.gouv.fr", "modernisation.gouv.fr"],
@@ -64,16 +66,25 @@ const data = {
       description: "Service Public",
       image: ServicePublicImage
     },
-
     {
       name: "Legifrance",
       link: "https://www.legifrance.gouv.fr/",
       description:
         "Legifrance donne accès au droit français : la Constitution, les codes, lois et règlements, les conventions...",
       image: LegiFranceImage
-    }
-  ],
-  demarches: [
+    },
+    {
+      name: "France Connect",
+      link: "https://franceconnect.gouv.fr/",
+      description: "France Connect permet d'accéder simplement aux services publics en ligne",
+      image: FranceConnectImage
+    },
+    {
+      name: "3939",
+      link: "https://www.service-public.fr/particuliers/vosdroits/F33683",
+      description: "Allo Service Public 3939 permet d'entrer en communication téléphonique avec un fonctionnaire spécialisé",
+      image: TrenteNeufImage
+    },
     {
       name: "Mes Aides",
       link: "https://mes-aides.gouv.fr/",
@@ -81,6 +92,14 @@ const data = {
         "Evaluez vos droits à 25 aides sociales. En moins de 7 minutes.",
       image: MesAidesImage
     },
+    {
+      name: "Direction générale des Finances publiques (DGFiP)",
+      link: "https://www.economie.gouv.fr/dgfip/services-en-ligne",
+      description: "Direction générale des Finances publiques (DGFiP)",
+      image: DGFIPImage
+    }
+  ],
+  demarches: [
     {
       name: "Caisse d'Allocation Familliale",
       link:
@@ -129,12 +148,6 @@ const data = {
       link: "https://ants.gouv.fr/",
       description: "Agence Nationale des Titres Sécurisés (ANTS)",
       image: ANTSImage
-    },
-    {
-      name: "Direction générale des Finances publiques (DGFiP)",
-      link: "https://www.economie.gouv.fr/dgfip/services-en-ligne",
-      description: "Direction générale des Finances publiques (DGFiP)",
-      image: DGFIPImage
     },
     {
       name: "Caisse Nationale d'Assurance Vieillesse (CNAV)",
